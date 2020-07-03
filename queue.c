@@ -121,7 +121,7 @@ bool q_insert_tail(queue_t *q, char *s)
 bool q_remove_head(queue_t *q, char *sp, size_t bufsize)
 {
     /* TODO: You need to fix up this code. */
-    if (sp == NULL)
+    if (sp == NULL || q->head == NULL)
         return false;
 
     if (bufsize > strlen(q->head->value)) {
