@@ -131,8 +131,6 @@ bool q_remove_head(queue_t *q, char *sp, size_t bufsize)
         strncpy(sp, q->head->value, bufsize);
         sp[bufsize] = '\0';
     }
-    // We should remember to free the allocated memory
-    // First, free the string pointer
 
     list_ele_t *tmp = q->head;
     q->head = q->head->next;
@@ -166,8 +164,24 @@ int q_size(queue_t *q)
  */
 void q_reverse(queue_t *q)
 {
-    /* TODO: You need to write the code for this function */
-    /* TODO: Remove the above comment when you are about to implement. */
+    if ((q == NULL) | (q->size == 0))
+        return;
+
+    list_ele_t *cur = q->head;
+    list_ele_t *next = q->head->next;
+    list_ele_t *tmp;
+
+    q->tail = q->head;
+
+    while (next != NULL) {
+        tmp = next->next;
+        next->next = cur;
+        cur = next;
+        next = tmp;
+    }
+
+    q->tail->next = NULL;
+    q->head = cur;
 }
 
 /*
