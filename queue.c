@@ -138,8 +138,8 @@ bool q_remove_head(queue_t *q, char *sp, size_t bufsize)
         strncpy(sp, q->head->value, strlen(q->head->value));
         sp[strlen(q->head->value)] = '\0';
     } else {
-        strncpy(sp, q->head->value, bufsize);
-        sp[bufsize] = '\0';
+        strncpy(sp, q->head->value, bufsize - 1);
+        sp[bufsize - 1] = '\0';
     }
 
     list_ele_t *tmp = q->head;
