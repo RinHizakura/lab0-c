@@ -1,4 +1,4 @@
 new
-ih dolphin
-rh dolphin
-
+ih dolphin 
+ih man
+sort

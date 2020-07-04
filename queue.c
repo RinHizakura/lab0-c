@@ -205,28 +205,69 @@ void q_reverse(queue_t *q)
     q->head = cur;
 }
 
+
 /*
  * Sort elements of queue in ascending order
  * No effect if q is NULL or empty. In addition, if q has only one
  * element, do nothing.
  */
+
+/* Please reference to
+ * https://www.geeksforgeeks.org/merge-two-sorted-linked-lists */
+
+/* MoveNode() function takes the node from the front of the
+   source, and move it to the front of the dest.
+   It is an error to call this with the source list empty.
+
+   Before calling MoveNode():
+   source == {1, 2, 3}
+   dest == {1, 2, 3}
+
+   Affter calling MoveNode():
+   source == {2, 3}
+   dest == {1, 1, 2, 3} */
+void move_node(list_ele_t **destRef, list_ele_t **sourceRef)
+{
+    /* the front source node  */
+    list_ele_t *newNode = *sourceRef;
+
+    /* Advance the source pointer */
+    *sourceRef = newNode->next;
+
+    /* Link the old dest off the new node */
+    newNode->next = *destRef;
+
+    /* Move dest to point to the new node */
+    *destRef = newNode;
+}
+
 list_ele_t *sorted_merge(list_ele_t *a, list_ele_t *b)
 {
-    if (a == NULL)
-        return b;
-    else if (b == NULL)
-        return a;
+    // a dummy first node to hang the result on
+    list_ele_t dummy;
+    // tail points to the last result node
+    list_ele_t *tail = &dummy;
 
-    list_ele_t *result = NULL;
-    if (strcmp(a->value, b->value) < 0) {
-        result = a;
-        result->next = sorted_merge(a->next, b);
-    } else {
-        result = b;
-        result->next = sorted_merge(a, b->next);
+    dummy.next = NULL;
+
+    while (1) {
+        if (a == NULL) {
+            tail->next = b;
+            break;
+        } else if (b == NULL) {
+            tail->next = a;
+            break;
+        }
+        if (strcmp(a->value, b->value) < 0) {
+            move_node(&(tail->next), &a);
+        } else {
+            move_node(&(tail->next), &b);
+        }
+
+        tail = tail->next;
     }
 
-    return result;
+    return dummy.next;
 }
 
 void front_back_split(list_ele_t *head,
@@ -286,4 +327,6 @@ void q_sort(queue_t *q)
         tmp = tmp->next;
 
     q->tail = tmp;
+
+    printf("H %s T %s", q->head->value, q->tail->value);
 }
