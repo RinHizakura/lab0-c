@@ -4,6 +4,7 @@
 
 #include "harness.h"
 #include "queue.h"
+#include "strnatcmp.h"
 
 // For replacing 'strcpy'
 #ifndef strlcpy
@@ -17,7 +18,6 @@
 queue_t *q_new()
 {
     queue_t *q = malloc(sizeof(queue_t));
-    /* TODO: What if malloc returned NULL? */
     if (q == NULL)
         return NULL;
 
@@ -33,7 +33,6 @@ void q_free(queue_t *q)
     if (q == NULL)
         return;
 
-    /* TODO: How about freeing the list elements and the strings? */
     while (q->head != NULL) {
         list_ele_t *tmp = q->head;
         q->head = q->head->next;
@@ -58,7 +57,6 @@ bool q_insert_head(queue_t *q, char *s)
         return false;
 
     list_ele_t *newh;
-    /* TODO: What should you do if the q is NULL? */
     newh = malloc(sizeof(list_ele_t));
     if (newh == NULL)
         return false;
@@ -134,7 +132,6 @@ bool q_insert_tail(queue_t *q, char *s)
  */
 bool q_remove_head(queue_t *q, char *sp, size_t bufsize)
 {
-    /* TODO: You need to fix up this code. */
 
     if (q == NULL)
         return false;
@@ -168,7 +165,6 @@ bool q_remove_head(queue_t *q, char *sp, size_t bufsize)
  */
 int q_size(queue_t *q)
 {
-    /* TODO: You need to write the code for this function */
     /* Remember: It should operate in O(1) time */
 
     if (q == NULL || q->head == NULL)
@@ -258,7 +254,7 @@ list_ele_t *sorted_merge(list_ele_t *a, list_ele_t *b)
             tail->next = a;
             break;
         }
-        if (strcmp(a->value, b->value) < 0) {
+        if (strnatcasecmp(a->value, b->value) < 0) {
             move_node(&(tail->next), &a);
         } else {
             move_node(&(tail->next), &b);
@@ -327,6 +323,4 @@ void q_sort(queue_t *q)
         tmp = tmp->next;
 
     q->tail = tmp;
-
-    printf("H %s T %s", q->head->value, q->tail->value);
 }
