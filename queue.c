@@ -30,7 +30,17 @@ queue_t *q_new()
 /* Free all storage used by queue */
 void q_free(queue_t *q)
 {
+    if (q == NULL)
+        return;
+
     /* TODO: How about freeing the list elements and the strings? */
+    while (q->head != NULL) {
+        list_ele_t *tmp = q->head;
+        q->head = q->head->next;
+        // After update the queue header, free the list element
+        free(tmp->value);
+        free(tmp);
+    }
     /* Free queue structure */
     free(q);
 }
@@ -164,7 +174,7 @@ int q_size(queue_t *q)
  */
 void q_reverse(queue_t *q)
 {
-    if ((q == NULL) | (q->size == 0))
+    if ((q == NULL) || (q->size == 0))
         return;
 
     list_ele_t *cur = q->head;
@@ -189,8 +199,76 @@ void q_reverse(queue_t *q)
  * No effect if q is NULL or empty. In addition, if q has only one
  * element, do nothing.
  */
+list_ele_t *sorted_merge(list_ele_t *a, list_ele_t *b)
+{
+    if (a == NULL)
+        return b;
+    else if (b == NULL)
+        return a;
+
+    list_ele_t *result = NULL;
+    if (a->value[0] <= b->value[0]) {
+        result = a;
+        result->next = sorted_merge(a->next, b);
+    } else {
+        result = b;
+        result->next = sorted_merge(a, b->next);
+    }
+
+    return result;
+}
+
+void front_back_split(list_ele_t *head,
+                      list_ele_t **front_ref,
+                      list_ele_t **back_ref)
+{
+    // if length is less than 2
+    if (head == NULL || head->next == NULL) {
+        *front_ref = head;
+        *back_ref = NULL;
+        return;
+    }
+
+    list_ele_t *slow = head;
+    list_ele_t *fast = head->next;
+
+    while (fast != NULL) {
+        fast = fast->next;
+        if (fast != NULL) {
+            slow = slow->next;
+            fast = fast->next;
+        }
+    }
+
+    *front_ref = head;
+    *back_ref = slow->next;
+    slow->next = NULL;
+}
+void merge_sort(list_ele_t **head)
+{
+    if (*head == NULL || (*head)->next == NULL)
+        return;
+
+    list_ele_t *a;
+    list_ele_t *b;
+
+    front_back_split(*head, &a, &b);
+
+    merge_sort(&a);
+    merge_sort(&b);
+
+    *head = sorted_merge(a, b);
+}
+
 void q_sort(queue_t *q)
 {
-    /* TODO: You need to write the code for this function */
-    /* TODO: Remove the above comment when you are about to implement. */
+    merge_sort(&q->head);
+
+    // O(n) update for tail
+    // Not a good way! But just leave this here
+    list_ele_t *tmp = q->head;
+    while (tmp->next != NULL)
+        tmp = tmp->next;
+
+    q->tail = tmp;
 }
