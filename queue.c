@@ -54,6 +54,9 @@ void q_free(queue_t *q)
  */
 bool q_insert_head(queue_t *q, char *s)
 {
+    if (q == NULL)
+        return false;
+
     list_ele_t *newh;
     /* TODO: What should you do if the q is NULL? */
     newh = malloc(sizeof(list_ele_t));
@@ -88,8 +91,9 @@ bool q_insert_head(queue_t *q, char *s)
  */
 bool q_insert_tail(queue_t *q, char *s)
 {
-    /* TODO: You need to write the complete code for this function */
-    /* Remember: It should operate in O(1) time */
+    if (q == NULL)
+        return false;
+
     list_ele_t *newh;
     newh = malloc(sizeof(list_ele_t));
     if (newh == NULL)
@@ -131,6 +135,10 @@ bool q_insert_tail(queue_t *q, char *s)
 bool q_remove_head(queue_t *q, char *sp, size_t bufsize)
 {
     /* TODO: You need to fix up this code. */
+
+    if (q == NULL)
+        return false;
+
     if (sp == NULL || q->head == NULL)
         return false;
 
@@ -162,6 +170,9 @@ int q_size(queue_t *q)
 {
     /* TODO: You need to write the code for this function */
     /* Remember: It should operate in O(1) time */
+
+    if (q == NULL || q->head == NULL)
+        return 0;
     return q->size;
 }
 
@@ -207,7 +218,7 @@ list_ele_t *sorted_merge(list_ele_t *a, list_ele_t *b)
         return a;
 
     list_ele_t *result = NULL;
-    if (a->value[0] <= b->value[0]) {
+    if (strcmp(a->value, b->value) < 0) {
         result = a;
         result->next = sorted_merge(a->next, b);
     } else {
@@ -262,6 +273,10 @@ void merge_sort(list_ele_t **head)
 
 void q_sort(queue_t *q)
 {
+    if (q == NULL)
+        return;
+    if (q->head == NULL)
+        return;
     merge_sort(&q->head);
 
     // O(n) update for tail
