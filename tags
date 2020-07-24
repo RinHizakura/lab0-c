@@ -1,0 +1,322 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BELE	harness.c	/^typedef struct BELE {$/;"	s	file:
+BIG_QUEUE	qtest.c	45;"	d	file:
+BUFSIZE	qtest.c	718;"	d	file:
+CC	Makefile	/^CC = gcc$/;"	m
+CELE	console.h	/^struct CELE {$/;"	s
+CFLAGS	Makefile	/^CFLAGS = -g -Wall -Werror -Idudect -I.$/;"	m
+CORE_DUMP	scripts/debug.py	/^    CORE_DUMP = ROOT + "\/core"$/;"	v
+DUDECT_CONSTANT_H	dudect/constant.h	2;"	d
+DUDECT_FIXTURE_H	dudect/fixture.h	2;"	d
+DUDECT_TTEST_H	dudect/ttest.h	2;"	d
+DUT_DIR	Makefile	/^DUT_DIR := dudect$/;"	m
+Debugger	scripts/debug.py	/^class Debugger:$/;"	c
+ELE	queue.h	/^typedef struct ELE {$/;"	s
+FILLCHAR	harness.c	28;"	d	file:
+GDB_PATH	scripts/debug.py	/^    GDB_PATH = shutil.which("gdb")$/;"	v
+GIT_HOOK	qtest.c	686;"	d	file:
+GIT_HOOKS	Makefile	/^GIT_HOOKS := .git\/hooks\/applied$/;"	m
+GREEN	scripts/driver.py	/^    GREEN = '\\033[92m'$/;"	v	class:Tracer
+INTERNAL	harness.c	13;"	d	file:
+INTERNAL	qtest.c	17;"	d	file:
+LAB0_CONSOLE_H	console.h	2;"	d
+LAB0_HARNESS_H	harness.h	2;"	d
+LAB0_QUEUE_H	queue.h	2;"	d
+LAB0_RANDOM_H	random.h	2;"	d
+LAB0_REPORT_H	report.h	2;"	d
+MAGICFOOTER	harness.c	25;"	d	file:
+MAGICFREE	harness.c	22;"	d	file:
+MAGICHEADER	harness.c	19;"	d	file:
+MAX	report.c	14;"	d	file:
+MAXQUIT	console.c	66;"	d	file:
+MAXSTRING	qtest.c	21;"	d	file:
+MAX_CHAR	report.h	18;"	d
+MAX_RANDSTR_LEN	qtest.c	63;"	d	file:
+MIN_RANDSTR_LEN	qtest.c	62;"	d	file:
+MSG_ERROR	report.h	/^typedef enum { MSG_WARN, MSG_ERROR, MSG_FATAL } message_t;$/;"	e	enum:__anon3
+MSG_FATAL	report.h	/^typedef enum { MSG_WARN, MSG_ERROR, MSG_FATAL } message_t;$/;"	e	enum:__anon3
+MSG_WARN	report.h	/^typedef enum { MSG_WARN, MSG_ERROR, MSG_FATAL } message_t;$/;"	e	enum:__anon3
+NR_MEASURE	dudect/constant.c	13;"	d	file:
+OBJS	Makefile	/^OBJS := qtest.o report.o console.o harness.o queue.o strnatcmp.o\\$/;"	m
+PELE	console.h	/^struct PELE {$/;"	s
+Q	Makefile	/^    Q := @$/;"	m
+Q	Makefile	/^    Q :=$/;"	m
+QTEST	scripts/debug.py	/^    QTEST = ROOT + "\/qtest"$/;"	v
+RED	scripts/driver.py	/^    RED = '\\033[91m'$/;"	v	class:Tracer
+RIO_BUFSIZE	console.c	38;"	d	file:
+RIO_ELE	console.c	/^struct RIO_ELE {$/;"	s	file:
+ROOT	scripts/debug.py	/^    ROOT = str(pathlib.Path(__file__).resolve().parents[1])$/;"	v
+RPT	report.h	9;"	d
+STRINGPAD	qtest.c	24;"	d	file:
+Tracer	scripts/driver.py	/^class Tracer:$/;"	c
+VECHO	Makefile	/^    VECHO = @printf$/;"	m
+VECHO	Makefile	/^    VECHO = @true$/;"	m
+WHITE	scripts/driver.py	/^    WHITE = '\\033[0m'$/;"	v	class:Tracer
+__call__	scripts/debug.py	/^    def __call__(self, argv, **kwargs):$/;"	m	class:Debugger	file:
+__init__	scripts/debug.py	/^    def __init__(self, command, common_opts):$/;"	m	class:Debugger
+__init__	scripts/driver.py	/^    def __init__(self,$/;"	m	class:Tracer
+add_cmd	console.c	/^void add_cmd(char *name, cmd_function operation, char *documentation)$/;"	f
+add_param	console.c	/^void add_param(char *name,$/;"	f
+add_quit_helper	console.c	/^void add_quit_helper(cmd_function qf)$/;"	f
+add_warning	scripts/commit-msg.hook	/^add_warning() {$/;"	f
+allocate_bytes	report.c	/^static size_t allocate_bytes = 0;$/;"	v	file:
+allocate_cnt	report.c	/^static size_t allocate_cnt = 0;$/;"	v	file:
+allocated	harness.c	/^static block_ele_t *allocated = NULL;$/;"	v	file:
+allocated_count	harness.c	/^static size_t allocated_count = 0;$/;"	v	file:
+allocation_check	harness.c	/^size_t allocation_check()$/;"	f
+analyze	scripts/debug.py	/^    def analyze(self, program, core_file):$/;"	m	class:Debugger
+args	scripts/debug.py	/^    args = parser.parse_args()$/;"	v
+autograde	scripts/driver.py	/^    autograde = False$/;"	v	class:Tracer
+big_queue_size	qtest.c	/^static int big_queue_size = BIG_QUEUE;$/;"	v	file:
+block_ele_t	harness.c	/^} block_ele_t;$/;"	t	typeref:struct:BELE	file:
+block_flag	console.c	/^static bool block_flag = false;$/;"	v	file:
+block_timing	console.c	/^static bool block_timing = false;$/;"	v	file:
+buf	console.c	/^    char buf[RIO_BUFSIZE]; \/* Internal buffer *\/$/;"	m	struct:RIO_ELE	file:
+buf_stack	console.c	/^static rio_ptr buf_stack;$/;"	v	file:
+bufptr	console.c	/^    char *bufptr;          \/* Next unread byte in internal buffer *\/$/;"	m	struct:RIO_ELE	file:
+calloc_or_fail	report.c	/^void *calloc_or_fail(size_t cnt, size_t bytes, char *fun_name)$/;"	f
+cautious_mode	harness.c	/^static bool cautious_mode = true;$/;"	v	file:
+charset	qtest.c	/^static const char charset[] = "abcdefghijklmnopqrstuvwxyz";$/;"	v	file:
+check_exceed	report.c	/^static void check_exceed(size_t new_bytes)$/;"	f	file:
+chunk_size	dudect/constant.c	/^const size_t chunk_size = 16;$/;"	v
+cmd_done	console.c	/^static bool cmd_done()$/;"	f	file:
+cmd_ele	console.h	/^typedef struct CELE cmd_ele, *cmd_ptr;$/;"	t	typeref:struct:CELE
+cmd_function	console.h	/^typedef bool (*cmd_function)(int argc, char *argv[]);$/;"	t
+cmd_list	console.c	/^static cmd_ptr cmd_list = NULL;$/;"	v	file:
+cmd_ptr	console.h	/^typedef struct CELE cmd_ele, *cmd_ptr;$/;"	t	typeref:struct:
+cmd_select	console.c	/^int cmd_select(int nfds,$/;"	f
+cnt	console.c	/^    int cnt;               \/* Unread bytes in internal buffer *\/$/;"	m	struct:RIO_ELE	file:
+colored	scripts/driver.py	/^    colored = False$/;"	v	class:Tracer
+command	scripts/driver.py	/^    command = qtest$/;"	v	class:Tracer
+compare_left	strnatcmp.c	/^static int compare_left(nat_char const *a, nat_char const *b)$/;"	f	file:
+compare_right	strnatcmp.c	/^static int compare_right(nat_char const *a, nat_char const *b)$/;"	f	file:
+console_init	qtest.c	/^static void console_init()$/;"	f	file:
+cpucycles	dudect/cpucycles.h	/^static inline int64_t cpucycles(void)$/;"	f
+current_bytes	report.c	/^static size_t current_bytes = 0;$/;"	v	file:
+debug	scripts/debug.py	/^    def debug(self, program):$/;"	m	class:Debugger
+default_fatal_fun	report.c	/^static void default_fatal_fun()$/;"	f	file:
+delta_time	report.c	/^double delta_time(double *timep)$/;"	f
+deps	Makefile	/^deps := $(OBJS:%.o=.%.o.d)$/;"	m
+die	dudect/fixture.c	/^static void __attribute__((noreturn)) die(void)$/;"	f	file:
+differentiate	dudect/fixture.c	/^static void differentiate(int64_t *exec_times,$/;"	f	file:
+display_warnings	scripts/commit-msg.hook	/^display_warnings() {$/;"	f
+do_comment_cmd	console.c	/^static bool do_comment_cmd(int argc, char *argv[])$/;"	f	file:
+do_free	qtest.c	/^static bool do_free(int argc, char *argv[])$/;"	f	file:
+do_help_cmd	console.c	/^static bool do_help_cmd(int argc, char *argv[])$/;"	f	file:
+do_insert_head	qtest.c	/^static bool do_insert_head(int argc, char *argv[])$/;"	f	file:
+do_insert_tail	qtest.c	/^static bool do_insert_tail(int argc, char *argv[])$/;"	f	file:
+do_log_cmd	console.c	/^static bool do_log_cmd(int argc, char *argv[])$/;"	f	file:
+do_new	qtest.c	/^static bool do_new(int argc, char *argv[])$/;"	f	file:
+do_option_cmd	console.c	/^static bool do_option_cmd(int argc, char *argv[])$/;"	f	file:
+do_quit_cmd	console.c	/^static bool do_quit_cmd(int argc, char *argv[])$/;"	f	file:
+do_remove_head	qtest.c	/^static bool do_remove_head(int argc, char *argv[])$/;"	f	file:
+do_remove_head_quiet	qtest.c	/^static bool do_remove_head_quiet(int argc, char *argv[])$/;"	f	file:
+do_reverse	qtest.c	/^static bool do_reverse(int argc, char *argv[])$/;"	f	file:
+do_show	qtest.c	/^static bool do_show(int argc, char *argv[])$/;"	f	file:
+do_size	qtest.c	/^static bool do_size(int argc, char *argv[])$/;"	f	file:
+do_sort	qtest.c	/^bool do_sort(int argc, char *argv[])$/;"	f
+do_source_cmd	console.c	/^static bool do_source_cmd(int argc, char *argv[])$/;"	f	file:
+do_time_cmd	console.c	/^static bool do_time_cmd(int argc, char *argv[])$/;"	f	file:
+documentation	console.h	/^    char *documentation;$/;"	m	struct:CELE
+documentation	console.h	/^    char *documentation;$/;"	m	struct:PELE
+doit	dudect/fixture.c	/^static bool doit(int mode)$/;"	f	file:
+drop_size	dudect/constant.c	/^const int drop_size = 20;$/;"	v
+dut_free	dudect/constant.h	27;"	d
+dut_insert_head	dudect/constant.h	13;"	d
+dut_insert_tail	dudect/constant.h	20;"	d
+dut_new	dudect/constant.h	5;"	d
+dut_size	dudect/constant.h	7;"	d
+echo	console.c	/^static bool echo = 0;$/;"	v	file:
+enough_measurements	dudect/fixture.c	42;"	d	file:
+env	harness.c	/^static jmp_buf env;$/;"	v	file:
+err_cnt	console.c	/^static int err_cnt = 0;$/;"	v	file:
+err_limit	console.c	/^static int err_limit = 5;$/;"	v	file:
+errfile	report.c	/^static FILE *errfile = NULL;$/;"	v	file:
+error_check	harness.c	/^bool error_check()$/;"	f
+error_message	harness.c	/^static char *error_message = "";$/;"	v	file:
+error_occurred	harness.c	/^static bool error_occurred = false;$/;"	v	file:
+exception_cancel	harness.c	/^void exception_cancel()$/;"	f
+exception_setup	harness.c	/^bool exception_setup(bool limit_time)$/;"	f
+fail_allocation	harness.c	/^static bool fail_allocation()$/;"	f	file:
+fail_buf	report.c	/^static char fail_buf[1024] = "FATAL Error.  Exiting\\n";$/;"	v	file:
+fail_count	qtest.c	/^static int fail_count = 0;$/;"	v	file:
+fail_fun	report.c	/^static void fail_fun(char *format, char *msg)$/;"	f	file:
+fail_limit	qtest.c	/^static int fail_limit = BIG_QUEUE;$/;"	v	file:
+fail_probability	harness.c	/^int fail_probability = 0;$/;"	v
+fatal_fun	report.c	/^static void (*fatal_fun)() = default_fatal_fun;$/;"	v	file:
+fd	console.c	/^    int fd;                \/* File descriptor *\/$/;"	m	struct:RIO_ELE	file:
+fd_max	console.c	/^static int fd_max = 0;$/;"	v	file:
+fill_rand_string	qtest.c	/^static void fill_rand_string(char *buf, size_t buf_size)$/;"	f	file:
+find_footer	harness.c	/^static size_t *find_footer(block_ele_t *b)$/;"	f	file:
+find_header	harness.c	/^static block_ele_t *find_header(void *p)$/;"	f	file:
+finish_cmd	console.c	/^bool finish_cmd()$/;"	f
+first_time	console.c	/^static double first_time;$/;"	v	file:
+free	harness.h	65;"	d
+free_array	report.c	/^void free_array(void *b, size_t cnt, size_t bytes)$/;"	f
+free_block	report.c	/^void free_block(void *b, size_t bytes)$/;"	f
+free_bytes	report.c	/^static size_t free_bytes = 0;$/;"	v	file:
+free_cnt	report.c	/^static size_t free_cnt = 0;$/;"	v	file:
+free_string	report.c	/^void free_string(char *s)$/;"	f
+front_back_split	queue.c	/^void front_back_split(list_ele_t *head,$/;"	f
+get_int	console.c	/^bool get_int(char *vname, int *loc)$/;"	f
+get_random_string	dudect/constant.c	/^char *get_random_string(void)$/;"	f
+group	scripts/debug.py	/^    group = parser.add_mutually_exclusive_group()$/;"	v
+head	queue.h	/^    list_ele_t *head; \/* Linked list of elements *\/$/;"	m	struct:__anon4
+help	scripts/debug.py	/^                        help="Analyze the core dump file")$/;"	v
+help	scripts/debug.py	/^                        help="Enter gdb shell")$/;"	v
+init_cmd	console.c	/^void init_cmd()$/;"	f
+init_dut	dudect/constant.c	/^void init_dut(void)$/;"	f
+init_files	report.c	/^static void init_files(FILE *efile, FILE *vfile)$/;"	f	file:
+init_in	console.c	/^static void init_in()$/;"	f	file:
+init_once	dudect/fixture.c	/^static void init_once(void)$/;"	f	file:
+init_time	report.c	/^void init_time(double *timep)$/;"	f
+interpret_cmd	console.c	/^static bool interpret_cmd(char *cmdline)$/;"	f	file:
+interpret_cmda	console.c	/^static bool interpret_cmda(int argc, char *argv[])$/;"	f	file:
+is_insert_tail_const	dudect/fixture.c	/^bool is_insert_tail_const(void)$/;"	f
+is_size_const	dudect/fixture.c	/^bool is_size_const(void)$/;"	f
+jmp_ready	harness.c	/^static volatile sig_atomic_t jmp_ready = false;$/;"	v	file:
+last_peak_bytes	report.c	/^static size_t last_peak_bytes = 0;$/;"	v	file:
+last_time	console.c	/^static double last_time;$/;"	v	file:
+linebuf	console.c	/^static char linebuf[RIO_BUFSIZE];$/;"	v	file:
+list_ele_t	queue.h	/^} list_ele_t;$/;"	t	typeref:struct:ELE
+logfile	report.c	/^static FILE *logfile = NULL;$/;"	v	file:
+m2	dudect/ttest.h	/^    double m2[2];$/;"	m	struct:__anon2
+magic_header	harness.c	/^    size_t magic_header; \/* Marker to see if block seems legitimate *\/$/;"	m	struct:BELE	file:
+main	qtest.c	/^int main(int argc, char *argv[])$/;"	f
+main	scripts/debug.py	/^def main(argv):$/;"	f
+malloc	harness.h	64;"	d
+malloc_or_fail	report.c	/^void *malloc_or_fail(size_t bytes, char *fun_name)$/;"	f
+maxScores	scripts/driver.py	/^    maxScores = [0, 6, 6, 6, 6, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5]$/;"	v	class:Tracer
+mblimit	report.c	/^static int mblimit = 0;$/;"	v	file:
+mean	dudect/ttest.h	/^    double mean[2];$/;"	m	struct:__anon2
+measure	dudect/constant.c	/^void measure(int64_t *before_ticks,$/;"	f
+merge_sort	queue.c	/^void merge_sort(list_ele_t **head)$/;"	f
+message_t	report.h	/^typedef enum { MSG_WARN, MSG_ERROR, MSG_FATAL } message_t;$/;"	t	typeref:enum:__anon3
+move_node	queue.c	/^void move_node(list_ele_t **destRef, list_ele_t **sourceRef)$/;"	f
+n	dudect/ttest.h	/^    double n[2];$/;"	m	struct:__anon2
+name	console.h	/^    char *name;$/;"	m	struct:CELE
+name	console.h	/^    char *name;$/;"	m	struct:PELE
+nat_char	strnatcmp.h	/^typedef char nat_char;$/;"	t
+nat_isdigit	strnatcmp.c	/^static inline int nat_isdigit(nat_char a)$/;"	f	file:
+nat_isspace	strnatcmp.c	/^static inline int nat_isspace(nat_char a)$/;"	f	file:
+nat_toupper	strnatcmp.c	/^static inline nat_char nat_toupper(nat_char a)$/;"	f	file:
+next	console.h	/^    cmd_ptr next;$/;"	m	struct:CELE
+next	console.h	/^    param_ptr next;$/;"	m	struct:PELE
+next	harness.c	/^    struct BELE *next, *prev;$/;"	m	struct:BELE	typeref:struct:BELE::BELE	file:
+next	queue.h	/^    struct ELE *next;$/;"	m	struct:ELE	typeref:struct:ELE::ELE
+noallocate_mode	harness.c	/^static bool noallocate_mode = false;$/;"	v	file:
+number_measurements	dudect/constant.c	/^const size_t number_measurements = NR_MEASURE;$/;"	v
+operation	console.h	/^    cmd_function operation;$/;"	m	struct:CELE
+param_ele	console.h	/^typedef struct PELE param_ele, *param_ptr;$/;"	t	typeref:struct:PELE
+param_list	console.c	/^static param_ptr param_list = NULL;$/;"	v	file:
+param_ptr	console.h	/^typedef struct PELE param_ele, *param_ptr;$/;"	t	typeref:struct:
+parse_args	console.c	/^static char **parse_args(char *line, int *argcp)$/;"	f	file:
+parser	scripts/debug.py	/^    parser = argparse.ArgumentParser()$/;"	v
+payload	harness.c	/^    unsigned char payload[0];$/;"	m	struct:BELE	file:
+payload_size	harness.c	/^    size_t payload_size;$/;"	m	struct:BELE	file:
+peak_bytes	report.c	/^static size_t peak_bytes = 0;$/;"	v	file:
+pop_file	console.c	/^static void pop_file()$/;"	f	file:
+prepare_inputs	dudect/constant.c	/^void prepare_inputs(uint8_t *input_data, uint8_t *classes)$/;"	f
+prev	console.c	/^    rio_ptr prev;          \/* Next element in stack *\/$/;"	m	struct:RIO_ELE	file:
+prev	harness.c	/^    struct BELE *next, *prev;$/;"	m	struct:BELE	typeref:struct:BELE::	file:
+printInColor	scripts/driver.py	/^    def printInColor(self, text, color):$/;"	m	class:Tracer
+prompt	console.c	/^static char *prompt = "cmd> ";$/;"	v	file:
+prompt_flag	console.c	/^static bool prompt_flag = true;$/;"	v	file:
+prompt_help	scripts/commit-msg.hook	/^prompt_help() {$/;"	f
+push_file	console.c	/^static bool push_file(char *fname)$/;"	f	file:
+q	dudect/constant.c	/^static queue_t *q = NULL;$/;"	v	file:
+q	qtest.c	/^static queue_t *q = NULL;$/;"	v	file:
+q_free	queue.c	/^void q_free(queue_t *q)$/;"	f
+q_insert_head	queue.c	/^bool q_insert_head(queue_t *q, char *s)$/;"	f
+q_insert_tail	queue.c	/^bool q_insert_tail(queue_t *q, char *s)$/;"	f
+q_new	queue.c	/^queue_t *q_new()$/;"	f
+q_remove_head	queue.c	/^bool q_remove_head(queue_t *q, char *sp, size_t bufsize)$/;"	f
+q_reverse	queue.c	/^void q_reverse(queue_t *q)$/;"	f
+q_size	queue.c	/^int q_size(queue_t *q)$/;"	f
+q_sort	queue.c	/^void q_sort(queue_t *q)$/;"	f
+qcnt	qtest.c	/^static size_t qcnt = 0;$/;"	v	file:
+qtest	scripts/driver.py	/^    qtest = ".\/qtest"$/;"	v	class:Tracer
+queue_init	qtest.c	/^static void queue_init()$/;"	f	file:
+queue_quit	qtest.c	/^static bool queue_quit(int argc, char *argv[])$/;"	f	file:
+queue_t	queue.h	/^} queue_t;$/;"	t	typeref:struct:__anon4
+quit_flag	console.c	/^static bool quit_flag = false;$/;"	v	file:
+quit_helper_cnt	console.c	/^static int quit_helper_cnt = 0;$/;"	v	file:
+quit_helpers	console.c	/^static cmd_function quit_helpers[MAXQUIT];$/;"	v	file:
+random_string	dudect/constant.c	/^static char random_string[NR_MEASURE][8];$/;"	v	file:
+random_string_iter	dudect/constant.c	/^static int random_string_iter = 0;$/;"	v	file:
+randombit	random.c	/^uint8_t randombit(void)$/;"	f
+randombytes	random.c	/^void randombytes(uint8_t *x, size_t how_much)$/;"	f
+read_commit_message	scripts/commit-msg.hook	/^read_commit_message() {$/;"	f
+read_ready	console.c	/^static bool read_ready()$/;"	f	file:
+readline	console.c	/^static char *readline()$/;"	f	file:
+record_error	console.c	/^static void record_error()$/;"	f	file:
+report	dudect/fixture.c	/^static bool report(void)$/;"	f	file:
+report	report.c	/^void report(int level, char *fmt, ...)$/;"	f
+report_event	report.c	/^void report_event(message_t msg, char *fmt, ...)$/;"	f
+report_noreturn	report.c	/^void report_noreturn(int level, char *fmt, ...)$/;"	f
+ret	report.c	/^static volatile int ret = 0;$/;"	v	file:
+rio_ptr	console.c	/^typedef struct RIO_ELE rio_t, *rio_ptr;$/;"	t	typeref:struct:	file:
+rio_t	console.c	/^typedef struct RIO_ELE rio_t, *rio_ptr;$/;"	t	typeref:struct:RIO_ELE	file:
+run	scripts/driver.py	/^    def run(self, tid=0):$/;"	m	class:Tracer
+run	scripts/driver.py	/^def run(name, args):$/;"	f
+runTrace	scripts/driver.py	/^    def runTrace(self, tid):$/;"	m	class:Tracer
+run_console	console.c	/^bool run_console(char *infile_name)$/;"	f
+sanity_check	qtest.c	/^static bool sanity_check()$/;"	f	file:
+set_cautious_mode	harness.c	/^void set_cautious_mode(bool cautious)$/;"	f
+set_colors	scripts/commit-msg.hook	/^set_colors() {$/;"	f
+set_echo	console.c	/^void set_echo(bool on)$/;"	f
+set_editor	scripts/commit-msg.hook	/^set_editor() {$/;"	f
+set_logfile	report.c	/^bool set_logfile(char *file_name)$/;"	f
+set_noallocate_mode	harness.c	/^void set_noallocate_mode(bool noallocate)$/;"	f
+set_verblevel	report.c	/^void set_verblevel(int level)$/;"	f
+setter	console.h	/^    setter_function setter;$/;"	m	struct:PELE
+setter_function	console.h	/^typedef void (*setter_function)(int oldval);$/;"	t
+show_queue	qtest.c	/^static bool show_queue(int vlevel)$/;"	f	file:
+sigalrmhandler	qtest.c	/^static void sigalrmhandler(int sig)$/;"	f	file:
+sigsegvhandler	qtest.c	/^static void sigsegvhandler(int sig)$/;"	f	file:
+simulation	console.c	/^bool simulation = false;$/;"	v
+size	queue.h	/^    int size;$/;"	m	struct:__anon4
+sorted_merge	queue.c	/^list_ele_t *sorted_merge(list_ele_t *a, list_ele_t *b)$/;"	f
+strdup	harness.h	68;"	d
+strdup	harness.h	69;"	d
+string_length	qtest.c	/^static int string_length = MAXSTRING;$/;"	v	file:
+strlcpy	queue.c	11;"	d	file:
+strnatcasecmp	strnatcmp.c	/^int strnatcasecmp(nat_char const *a, nat_char const *b)$/;"	f
+strnatcmp0	strnatcmp.c	/^static int strnatcmp0(nat_char const *a, nat_char const *b, int fold_case)$/;"	f	file:
+strsave_or_fail	report.c	/^char *strsave_or_fail(char *s, char *fun_name)$/;"	f
+t	dudect/fixture.c	/^static t_ctx *t;$/;"	v	file:
+t_compute	dudect/ttest.c	/^double t_compute(t_ctx *ctx)$/;"	f
+t_ctx	dudect/ttest.h	/^} t_ctx;$/;"	t	typeref:struct:__anon2
+t_init	dudect/ttest.c	/^void t_init(t_ctx *ctx)$/;"	f
+t_push	dudect/ttest.c	/^void t_push(t_ctx *ctx, double x, uint8_t class)$/;"	f
+t_threshold_bananas	dudect/fixture.c	51;"	d	file:
+t_threshold_moderate	dudect/fixture.c	54;"	d	file:
+tail	queue.h	/^    list_ele_t *tail;$/;"	m	struct:__anon4
+test_calloc	harness.c	/^void *test_calloc(size_t nelem, size_t elsize)$/;"	f
+test_free	harness.c	/^void test_free(void *p)$/;"	f
+test_insert_tail	dudect/constant.c	/^enum { test_insert_tail, test_size };$/;"	e	enum:__anon1	file:
+test_malloc	harness.c	/^void *test_malloc(size_t size)$/;"	f
+test_size	dudect/constant.c	/^enum { test_insert_tail, test_size };$/;"	e	enum:__anon1	file:
+test_strdup	harness.c	/^char *test_strdup(const char *s)$/;"	f
+test_tries	dudect/fixture.c	43;"	d	file:
+time_limit	harness.c	/^static int time_limit = 1;$/;"	v	file:
+time_limited	harness.c	/^static bool time_limited = false;$/;"	v	file:
+traceDict	scripts/driver.py	/^    traceDict = {$/;"	v	class:Tracer
+traceDirectory	scripts/driver.py	/^    traceDirectory = ".\/traces"$/;"	v	class:Tracer
+traceProbs	scripts/driver.py	/^    traceProbs = {$/;"	v	class:Tracer
+trigger_exception	harness.c	/^void trigger_exception(char *msg)$/;"	f
+update_statistics	dudect/fixture.c	/^static void update_statistics(int64_t *exec_times, uint8_t *classes)$/;"	f	file:
+usage	qtest.c	/^static void usage(char *cmd)$/;"	f	file:
+usage	scripts/driver.py	/^def usage(name):$/;"	f
+useValgrind	scripts/driver.py	/^    useValgrind = False$/;"	v	class:Tracer
+validate_commit_message	scripts/commit-msg.hook	/^validate_commit_message() {$/;"	f
+valp	console.h	/^    int *valp;$/;"	m	struct:PELE
+value	queue.h	/^    char *value;$/;"	m	struct:ELE
+verbLevel	scripts/driver.py	/^    verbLevel = 0$/;"	v	class:Tracer
+verbfile	report.c	/^static FILE *verbfile = NULL;$/;"	v	file:
+verblevel	report.c	/^int verblevel = 0;$/;"	v
