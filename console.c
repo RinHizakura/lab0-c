@@ -641,11 +641,13 @@ bool run_console(char *infile_name)
         return false;
     }
 
+    /*
     char *line;
     while ((line = linenoise("hello> ")) != NULL) {
-        interpret_cmd(line);
+        //////interpret_cmd(line);
         free(line);
-    }
+    }*/
+
 
     while (!cmd_done())
         cmd_select(0, NULL, NULL, NULL, NULL);

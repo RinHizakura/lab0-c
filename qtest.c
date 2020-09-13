@@ -680,7 +680,7 @@ static void usage(char *cmd)
     printf("\t-f --file       IFILE   Read commands from IFILE\n");
     printf("\t-v --verbose    VLEVEL  Set verbosity level\n");
     printf("\t-l --log        LFILE   Echo results to LFILE\n");
-    printf("\t   --multiline          Enable multi-line mode\n");
+    printf("\t   --editmode   MODE    Edit with single or multi-line mode\n");
     exit(0);
 }
 
@@ -733,16 +733,19 @@ int main(int argc, char *argv[])
 
     int option_index = 0;
     struct option opts[] = {
-        {"verbose", 1, NULL, 'v'},
-        {"file", 1, NULL, 'f'},
-        {"help", 0, NULL, 'h'},
-        {"log", 1, NULL, 'l'},
+        {"verbose", 1, NULL, 'v'}, {"file", 1, NULL, 'f'},
+        {"help", 0, NULL, 'h'},    {"log", 1, NULL, 'l'},
+        {"editmode", 1, NULL, 0},
     };
 
 
     while ((c = getopt_long(argc, argv, "hv:f:l:", opts, &option_index)) !=
            -1) {
         switch (c) {
+        case 0:
+            if (!strcmp(opts[option_index].name, "editmode"))
+                linenoiseSetMultiLine(atoi(optarg));
+            break;
         case 'h':
             usage(argv[0]);
             break;
