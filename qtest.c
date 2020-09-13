@@ -12,6 +12,7 @@
 #include <time.h>
 #include <unistd.h>
 #include "dudect/fixture.h"
+#include "linenoise.h"
 
 /* Our program needs to use regular malloc/free */
 #define INTERNAL 1
@@ -33,7 +34,6 @@
 
 #include "console.h"
 #include "report.h"
-#include "strnatcmp.h"
 
 /* Settable parameters */
 
@@ -559,7 +559,7 @@ bool do_sort(int argc, char *argv[])
         for (list_ele_t *e = q->head; e && --cnt; e = e->next) {
             /* Ensure each element in ascending order */
             /* FIXME: add an option to specify sorting order */
-            if (strnatcasecmp(e->value, e->next->value) > 0) {
+            if (strcmp(e->value, e->next->value) > 0) {
                 report(1, "ERROR: Not sorted in ascending order");
                 ok = false;
                 break;
@@ -676,10 +676,11 @@ static bool queue_quit(int argc, char *argv[])
 static void usage(char *cmd)
 {
     printf("Usage: %s [-h] [-f IFILE][-v VLEVEL][-l LFILE]\n", cmd);
-    printf("\t-h         Print this information\n");
-    printf("\t-f IFILE   Read commands from IFILE\n");
-    printf("\t-v VLEVEL  Set verbosity level\n");
-    printf("\t-l LFILE   Echo results to LFILE\n");
+    printf("\t-h --help               Print this information\n");
+    printf("\t-f --file       IFILE   Read commands from IFILE\n");
+    printf("\t-v --verbose    VLEVEL  Set verbosity level\n");
+    printf("\t-l --log        LFILE   Echo results to LFILE\n");
+    printf("\t   --multiline          Enable multi-line mode\n");
     exit(0);
 }
 
@@ -730,7 +731,17 @@ int main(int argc, char *argv[])
     int level = 4;
     int c;
 
-    while ((c = getopt(argc, argv, "hv:f:l:")) != -1) {
+    int option_index = 0;
+    struct option opts[] = {
+        {"verbose", 1, NULL, 'v'},
+        {"file", 1, NULL, 'f'},
+        {"help", 0, NULL, 'h'},
+        {"log", 1, NULL, 'l'},
+    };
+
+
+    while ((c = getopt_long(argc, argv, "hv:f:l:", opts, &option_index)) !=
+           -1) {
         switch (c) {
         case 'h':
             usage(argv[0]);
@@ -768,6 +779,7 @@ int main(int argc, char *argv[])
         set_logfile(logfile_name);
 
     add_quit_helper(queue_quit);
+
 
     bool ok = true;
     ok = ok && run_console(infile_name);

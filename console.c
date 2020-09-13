@@ -11,9 +11,11 @@
 #include <sys/select.h>
 #include <sys/stat.h>
 #include <sys/types.h>
+#include <termios.h>
 #include <unistd.h>
 
 #include "console.h"
+#include "linenoise.h"
 #include "report.h"
 
 /* Some global values */
@@ -66,6 +68,7 @@ static char *prompt = "cmd> ";
 #define MAXQUIT 10
 static cmd_function quit_helpers[MAXQUIT];
 static int quit_helper_cnt = 0;
+
 
 static bool do_quit_cmd(int argc, char *argv[]);
 static bool do_help_cmd(int argc, char *argv[]);
@@ -536,6 +539,8 @@ static char *readline()
         report_noreturn(1, linebuf);
     }
 
+
+
     return linebuf;
 }
 
@@ -565,6 +570,7 @@ static bool cmd_done()
  * nfds should be set to the maximum file descriptor for network sockets.
  * If nfds == 0, this indicates that there is no pending network activity
  */
+
 int cmd_select(int nfds,
                fd_set *readfds,
                fd_set *writefds,
@@ -627,6 +633,7 @@ bool finish_cmd()
     return ok && err_cnt == 0;
 }
 
+
 bool run_console(char *infile_name)
 {
     if (!push_file(infile_name)) {
@@ -634,8 +641,15 @@ bool run_console(char *infile_name)
         return false;
     }
 
+    char *line;
+    while ((line = linenoise("hello> ")) != NULL) {
+        interpret_cmd(line);
+        free(line);
+    }
+
     while (!cmd_done())
         cmd_select(0, NULL, NULL, NULL, NULL);
+
     return err_cnt == 0;
 }
 

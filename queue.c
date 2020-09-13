@@ -4,7 +4,6 @@
 
 #include "harness.h"
 #include "queue.h"
-#include "strnatcmp.h"
 
 // For replacing 'strcpy'
 #ifndef strlcpy
@@ -132,7 +131,6 @@ bool q_insert_tail(queue_t *q, char *s)
  */
 bool q_remove_head(queue_t *q, char *sp, size_t bufsize)
 {
-
     if (q == NULL)
         return false;
 
@@ -254,7 +252,7 @@ list_ele_t *sorted_merge(list_ele_t *a, list_ele_t *b)
             tail->next = a;
             break;
         }
-        if (strnatcasecmp(a->value, b->value) < 0) {
+        if (strcmp(a->value, b->value) < 0) {
             move_node(&(tail->next), &a);
         } else {
             move_node(&(tail->next), &b);

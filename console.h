@@ -68,12 +68,13 @@ bool finish_cmd();
  * Handle command processing in program that uses select as main
  * control loop.
  */
+/*
 int cmd_select(int nfds,
                fd_set *readfds,
                fd_set *writefds,
                fd_set *exceptfds,
                struct timeval *timeout);
-
+*/
 /* Run command loop.  Non-null infile_name implies read commands from that file
  */
 bool run_console(char *infile_name);
@@ -81,4 +82,5 @@ bool run_console(char *infile_name);
 /* helper function for param_list
  */
 int valp_deref(param_ptr plist);
+
 #endif /* LAB0_CONSOLE_H */
