@@ -256,6 +256,7 @@ static bool interpret_cmd(char *cmdline)
     return ok;
 }
 
+
 /* Set function to be executed as part of program exit */
 void add_quit_helper(cmd_function qf)
 {
@@ -636,21 +637,21 @@ bool finish_cmd()
 
 bool run_console(char *infile_name)
 {
-    if (!push_file(infile_name)) {
-        report(1, "ERROR: Could not open source file '%s'", infile_name);
-        return false;
+    if (infile_name == NULL) {
+        char *line;
+        while (!quit_flag && (line = linenoise("cmd> ")) != NULL) {
+            interpret_cmd(line);
+            free(line);
+        }
+    } else {
+        if (!push_file(infile_name)) {
+            report(1, "ERROR: Could not open source file '%s'", infile_name);
+            return false;
+        }
+
+        while (!cmd_done())
+            cmd_select(0, NULL, NULL, NULL, NULL);
     }
-
-    /*
-    char *line;
-    while ((line = linenoise("hello> ")) != NULL) {
-        //////interpret_cmd(line);
-        free(line);
-    }*/
-
-
-    while (!cmd_done())
-        cmd_select(0, NULL, NULL, NULL, NULL);
 
     return err_cnt == 0;
 }

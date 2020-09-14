@@ -841,6 +841,9 @@ static int linenoiseEdit(int stdin_fd, int stdout_fd, char *buf, size_t buflen, 
 
         switch(c) {
         case ENTER:    /* enter */
+            l.buf[l.len] = '\n';     
+            l.buf[++l.len] = '\0';
+
             history_len--;
             free(history[history_len]);
             if (mlmode) linenoiseEditMoveEnd(&l);
