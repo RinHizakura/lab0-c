@@ -190,6 +190,7 @@ static char **parse_args(char *line, int *argcp)
             *dst++ = c;
         }
     }
+    *dst = '\0';
 
     /* Now assemble into array of strings */
     char **argv = calloc_or_fail(argc, sizeof(char *), "parse_args");
@@ -634,12 +635,54 @@ bool finish_cmd()
     return ok && err_cnt == 0;
 }
 
+static bool cmd_maybe(char *target, const char *src)
+{
+    for (int i = 0; i < strlen(src); i++) {
+        if (target[i] == '\0')
+            return false;
+        if (src[i] != target[i])
+            return false;
+    }
+    return true;
+}
+
+static void completion(const char *buf, linenoiseCompletions *lc)
+{
+    if (strncmp("option ", buf, 7) == 0) {
+        param_ptr plist = param_list;
+
+        while (plist) {
+            char str[128] = "";
+            // if parameter is too long, now we just ignore it
+            if (strlen(plist->name) > 120)
+                continue;
+
+            strcat(str, "option ");
+            strcat(str, plist->name);
+            if (cmd_maybe(str, buf))
+                linenoiseAddCompletion(lc, str);
+
+            plist = plist->next;
+        }
+        return;
+    }
+
+    cmd_ptr clist = cmd_list;
+    while (clist) {
+        if (cmd_maybe(clist->name, buf))
+            linenoiseAddCompletion(lc, clist->name);
+
+        clist = clist->next;
+    }
+}
 
 bool run_console(char *infile_name)
 {
     if (infile_name == NULL) {
         char *line;
+        linenoiseSetCompletionCallback(completion);
         while (!quit_flag && (line = linenoise("cmd> ")) != NULL) {
+            linenoiseHistoryAdd(line);
             interpret_cmd(line);
             free(line);
         }
@@ -652,7 +695,6 @@ bool run_console(char *infile_name)
         while (!cmd_done())
             cmd_select(0, NULL, NULL, NULL, NULL);
     }
-
     return err_cnt == 0;
 }
 

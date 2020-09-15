@@ -6,8 +6,8 @@
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
 BACKSPACE	linenoise.c	/^	BACKSPACE =  127    \/* Backspace *\/$/;"	e	enum:KEY_ACTION	file:
 BELE	harness.c	/^typedef struct BELE {$/;"	s	file:
-BIG_QUEUE	qtest.c	46;"	d	file:
-BUFSIZE	qtest.c	720;"	d	file:
+BIG_QUEUE	qtest.c	45;"	d	file:
+BUFSIZE	qtest.c	719;"	d	file:
 CC	Makefile	/^CC = gcc$/;"	m
 CELE	console.h	/^struct CELE {$/;"	s
 CFLAGS	Makefile	/^CFLAGS = -g -Wall -Werror -Idudect -I.$/;"	m
@@ -36,7 +36,7 @@ ENTER	linenoise.c	/^	ENTER = 13,         \/* Enter *\/$/;"	e	enum:KEY_ACTION	fil
 ESC	linenoise.c	/^	ESC = 27,           \/* Escape *\/$/;"	e	enum:KEY_ACTION	file:
 FILLCHAR	harness.c	28;"	d	file:
 GDB_PATH	scripts/debug.py	/^    GDB_PATH = shutil.which("gdb")$/;"	v
-GIT_HOOK	qtest.c	688;"	d	file:
+GIT_HOOK	qtest.c	687;"	d	file:
 GIT_HOOKS	Makefile	/^GIT_HOOKS := .git\/hooks\/applied$/;"	m
 GREEN	scripts/driver.py	/^    GREEN = '\\033[92m'$/;"	v	class:Tracer
 INTERNAL	harness.c	13;"	d	file:
@@ -49,10 +49,9 @@ LAB0_QUEUE_H	queue.h	2;"	d
 LAB0_RANDOM_H	random.h	2;"	d
 LAB0_REPORT_H	report.h	2;"	d
 LINENOISE_DEFAULT_HISTORY_MAX_LEN	linenoise.c	120;"	d	file:
-LINENOISE_HISTORY_NEXT	linenoise.c	724;"	d	file:
-LINENOISE_HISTORY_PREV	linenoise.c	725;"	d	file:
+LINENOISE_HISTORY_NEXT	linenoise.c	726;"	d	file:
+LINENOISE_HISTORY_PREV	linenoise.c	727;"	d	file:
 LINENOISE_MAX_LINE	linenoise.c	121;"	d	file:
-LINENOISE_MAX_LINE	linenoise.h	73;"	d
 MAGICFOOTER	harness.c	25;"	d	file:
 MAGICFREE	harness.c	22;"	d	file:
 MAGICHEADER	harness.c	19;"	d	file:
@@ -60,13 +59,13 @@ MAX	report.c	14;"	d	file:
 MAXQUIT	console.c	68;"	d	file:
 MAXSTRING	qtest.c	22;"	d	file:
 MAX_CHAR	report.h	18;"	d
-MAX_RANDSTR_LEN	qtest.c	64;"	d	file:
-MIN_RANDSTR_LEN	qtest.c	63;"	d	file:
-MSG_ERROR	report.h	/^typedef enum { MSG_WARN, MSG_ERROR, MSG_FATAL } message_t;$/;"	e	enum:__anon3
-MSG_FATAL	report.h	/^typedef enum { MSG_WARN, MSG_ERROR, MSG_FATAL } message_t;$/;"	e	enum:__anon3
-MSG_WARN	report.h	/^typedef enum { MSG_WARN, MSG_ERROR, MSG_FATAL } message_t;$/;"	e	enum:__anon3
+MAX_RANDSTR_LEN	qtest.c	63;"	d	file:
+MIN_RANDSTR_LEN	qtest.c	62;"	d	file:
+MSG_ERROR	report.h	/^typedef enum { MSG_WARN, MSG_ERROR, MSG_FATAL } message_t;$/;"	e	enum:__anon2
+MSG_FATAL	report.h	/^typedef enum { MSG_WARN, MSG_ERROR, MSG_FATAL } message_t;$/;"	e	enum:__anon2
+MSG_WARN	report.h	/^typedef enum { MSG_WARN, MSG_ERROR, MSG_FATAL } message_t;$/;"	e	enum:__anon2
 NR_MEASURE	dudect/constant.c	13;"	d	file:
-OBJS	Makefile	/^OBJS := qtest.o report.o console.o harness.o queue.o strnatcmp.o linenoise.o\\$/;"	m
+OBJS	Makefile	/^OBJS := qtest.o report.o console.o harness.o queue.o linenoise.o\\$/;"	m
 PELE	console.h	/^struct PELE {$/;"	s
 Q	Makefile	/^    Q := @$/;"	m
 Q	Makefile	/^    Q :=$/;"	m
@@ -78,6 +77,8 @@ ROOT	scripts/debug.py	/^    ROOT = str(pathlib.Path(__file__).resolve().parents[
 RPT	report.h	9;"	d
 STRINGPAD	qtest.c	25;"	d	file:
 TAB	linenoise.c	/^	TAB = 9,            \/* Tab *\/$/;"	e	enum:KEY_ACTION	file:
+TCASE	Makefile	/^    TCASE := -t $(tid)$/;"	m
+TCASE	Makefile	/^    TCASE :=$/;"	m
 Tracer	scripts/driver.py	/^class Tracer:$/;"	c
 VECHO	Makefile	/^    VECHO = @printf$/;"	m
 VECHO	Makefile	/^    VECHO = @true$/;"	m
@@ -128,8 +129,6 @@ cnt	console.c	/^    int cnt;               \/* Unread bytes in internal buffer *
 colored	scripts/driver.py	/^    colored = False$/;"	v	class:Tracer
 cols	linenoise.c	/^    size_t cols;        \/* Number of columns in terminal. *\/$/;"	m	struct:linenoiseState	file:
 command	scripts/driver.py	/^    command = qtest$/;"	v	class:Tracer
-compare_left	strnatcmp.c	/^static int compare_left(nat_char const *a, nat_char const *b)$/;"	f	file:
-compare_right	strnatcmp.c	/^static int compare_right(nat_char const *a, nat_char const *b)$/;"	f	file:
 completeLine	linenoise.c	/^static int completeLine(struct linenoiseState *ls) {$/;"	f	file:
 completionCallback	linenoise.c	/^static linenoiseCompletionCallback *completionCallback = NULL;$/;"	v	file:
 console_init	qtest.c	/^static void console_init()$/;"	f	file:
@@ -142,7 +141,7 @@ delta_time	report.c	/^double delta_time(double *timep)$/;"	f
 deps	Makefile	/^deps := $(OBJS:%.o=.%.o.d)$/;"	m
 die	dudect/fixture.c	/^static void __attribute__((noreturn)) die(void)$/;"	f	file:
 differentiate	dudect/fixture.c	/^static void differentiate(int64_t *exec_times,$/;"	f	file:
-disableRawMode	linenoise.c	/^void disableRawMode(int fd) {$/;"	f
+disableRawMode	linenoise.c	/^static void disableRawMode(int fd) {$/;"	f	file:
 display_warnings	scripts/commit-msg.hook	/^display_warnings() {$/;"	f
 do_comment_cmd	console.c	/^static bool do_comment_cmd(int argc, char *argv[])$/;"	f	file:
 do_free	qtest.c	/^static bool do_free(int argc, char *argv[])$/;"	f	file:
@@ -171,7 +170,7 @@ dut_insert_tail	dudect/constant.h	20;"	d
 dut_new	dudect/constant.h	5;"	d
 dut_size	dudect/constant.h	7;"	d
 echo	console.c	/^static bool echo = 0;$/;"	v	file:
-enableRawMode	linenoise.c	/^int enableRawMode(int fd) {$/;"	f
+enableRawMode	linenoise.c	/^static int enableRawMode(int fd) {$/;"	f	file:
 enough_measurements	dudect/fixture.c	42;"	d	file:
 env	harness.c	/^static jmp_buf env;$/;"	v	file:
 err_cnt	console.c	/^static int err_cnt = 0;$/;"	v	file:
@@ -211,7 +210,7 @@ getCursorPosition	linenoise.c	/^static int getCursorPosition(int ifd, int ofd) {
 get_int	console.c	/^bool get_int(char *vname, int *loc)$/;"	f
 get_random_string	dudect/constant.c	/^char *get_random_string(void)$/;"	f
 group	scripts/debug.py	/^    group = parser.add_mutually_exclusive_group()$/;"	v
-head	queue.h	/^    list_ele_t *head; \/* Linked list of elements *\/$/;"	m	struct:__anon4
+head	queue.h	/^    list_ele_t *head; \/* Linked list of elements *\/$/;"	m	struct:__anon1
 help	scripts/debug.py	/^                        help="Analyze the core dump file")$/;"	v
 help	scripts/debug.py	/^                        help="Enter gdb shell")$/;"	v
 hintsCallback	linenoise.c	/^static linenoiseHintsCallback *hintsCallback = NULL;$/;"	v	file:
@@ -267,7 +266,7 @@ linenoiseMaskModeDisable	linenoise.c	/^void linenoiseMaskModeDisable(void) {$/;"
 linenoiseMaskModeEnable	linenoise.c	/^void linenoiseMaskModeEnable(void) {$/;"	f
 linenoiseNoTTY	linenoise.c	/^static char *linenoiseNoTTY(void) {$/;"	f	file:
 linenoisePrintKeyCodes	linenoise.c	/^void linenoisePrintKeyCodes(void) {$/;"	f
-linenoiseRaw	linenoise.c	/^int linenoiseRaw(char *buf, size_t buflen, const char *prompt) {$/;"	f
+linenoiseRaw	linenoise.c	/^static int linenoiseRaw(char *buf, size_t buflen, const char *prompt) {$/;"	f	file:
 linenoiseSetCompletionCallback	linenoise.c	/^void linenoiseSetCompletionCallback(linenoiseCompletionCallback *fn) {$/;"	f
 linenoiseSetFreeHintsCallback	linenoise.c	/^void linenoiseSetFreeHintsCallback(linenoiseFreeHintsCallback *fn) {$/;"	f
 linenoiseSetHintsCallback	linenoise.c	/^void linenoiseSetHintsCallback(linenoiseHintsCallback *fn) {$/;"	f
@@ -276,7 +275,7 @@ linenoiseState	linenoise.c	/^struct linenoiseState {$/;"	s	file:
 list_ele_t	queue.h	/^} list_ele_t;$/;"	t	typeref:struct:ELE
 lndebug	linenoise.c	196;"	d	file:
 logfile	report.c	/^static FILE *logfile = NULL;$/;"	v	file:
-m2	dudect/ttest.h	/^    double m2[2];$/;"	m	struct:__anon2
+m2	dudect/ttest.h	/^    double m2[2];$/;"	m	struct:__anon4
 magic_header	harness.c	/^    size_t magic_header; \/* Marker to see if block seems legitimate *\/$/;"	m	struct:BELE	file:
 main	qtest.c	/^int main(int argc, char *argv[])$/;"	f
 main	scripts/debug.py	/^def main(argv):$/;"	f
@@ -286,19 +285,15 @@ maskmode	linenoise.c	/^static int maskmode = 0; \/* Show "***" instead of input.
 maxScores	scripts/driver.py	/^    maxScores = [0, 6, 6, 6, 6, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5]$/;"	v	class:Tracer
 maxrows	linenoise.c	/^    size_t maxrows;     \/* Maximum num of rows used so far (multiline mode) *\/$/;"	m	struct:linenoiseState	file:
 mblimit	report.c	/^static int mblimit = 0;$/;"	v	file:
-mean	dudect/ttest.h	/^    double mean[2];$/;"	m	struct:__anon2
+mean	dudect/ttest.h	/^    double mean[2];$/;"	m	struct:__anon4
 measure	dudect/constant.c	/^void measure(int64_t *before_ticks,$/;"	f
 merge_sort	queue.c	/^void merge_sort(list_ele_t **head)$/;"	f
-message_t	report.h	/^typedef enum { MSG_WARN, MSG_ERROR, MSG_FATAL } message_t;$/;"	t	typeref:enum:__anon3
+message_t	report.h	/^typedef enum { MSG_WARN, MSG_ERROR, MSG_FATAL } message_t;$/;"	t	typeref:enum:__anon2
 mlmode	linenoise.c	/^static int mlmode = 0;  \/* Multi line mode. Default is single line. *\/$/;"	v	file:
 move_node	queue.c	/^void move_node(list_ele_t **destRef, list_ele_t **sourceRef)$/;"	f
-n	dudect/ttest.h	/^    double n[2];$/;"	m	struct:__anon2
+n	dudect/ttest.h	/^    double n[2];$/;"	m	struct:__anon4
 name	console.h	/^    char *name;$/;"	m	struct:CELE
 name	console.h	/^    char *name;$/;"	m	struct:PELE
-nat_char	strnatcmp.h	/^typedef char nat_char;$/;"	t
-nat_isdigit	strnatcmp.c	/^static inline int nat_isdigit(nat_char a)$/;"	f	file:
-nat_isspace	strnatcmp.c	/^static inline int nat_isspace(nat_char a)$/;"	f	file:
-nat_toupper	strnatcmp.c	/^static inline nat_char nat_toupper(nat_char a)$/;"	f	file:
 next	console.h	/^    cmd_ptr next;$/;"	m	struct:CELE
 next	console.h	/^    param_ptr next;$/;"	m	struct:PELE
 next	harness.c	/^    struct BELE *next, *prev;$/;"	m	struct:BELE	typeref:struct:BELE::BELE	file:
@@ -343,7 +338,7 @@ qcnt	qtest.c	/^static size_t qcnt = 0;$/;"	v	file:
 qtest	scripts/driver.py	/^    qtest = ".\/qtest"$/;"	v	class:Tracer
 queue_init	qtest.c	/^static void queue_init()$/;"	f	file:
 queue_quit	qtest.c	/^static bool queue_quit(int argc, char *argv[])$/;"	f	file:
-queue_t	queue.h	/^} queue_t;$/;"	t	typeref:struct:__anon4
+queue_t	queue.h	/^} queue_t;$/;"	t	typeref:struct:__anon1
 quit_flag	console.c	/^static bool quit_flag = false;$/;"	v	file:
 quit_helper_cnt	console.c	/^static int quit_helper_cnt = 0;$/;"	v	file:
 quit_helpers	console.c	/^static cmd_function quit_helpers[MAXQUIT];$/;"	v	file:
@@ -354,7 +349,7 @@ randombytes	random.c	/^void randombytes(uint8_t *x, size_t how_much)$/;"	f
 rawmode	linenoise.c	/^static int rawmode = 0; \/* For atexit() function to check if restore is needed*\/$/;"	v	file:
 read_commit_message	scripts/commit-msg.hook	/^read_commit_message() {$/;"	f
 read_ready	console.c	/^static bool read_ready()$/;"	f	file:
-readline	console.c	/^char *readline()$/;"	f
+readline	console.c	/^static char *readline()$/;"	f	file:
 record_error	console.c	/^static void record_error()$/;"	f	file:
 refreshLine	linenoise.c	/^static void refreshLine(struct linenoiseState *l) {$/;"	f	file:
 refreshMultiLine	linenoise.c	/^static void refreshMultiLine(struct linenoiseState *l) {$/;"	f	file:
@@ -385,30 +380,29 @@ show_queue	qtest.c	/^static bool show_queue(int vlevel)$/;"	f	file:
 sigalrmhandler	qtest.c	/^static void sigalrmhandler(int sig)$/;"	f	file:
 sigsegvhandler	qtest.c	/^static void sigsegvhandler(int sig)$/;"	f	file:
 simulation	console.c	/^bool simulation = false;$/;"	v
-size	queue.h	/^    int size;$/;"	m	struct:__anon4
+size	queue.h	/^    int size;$/;"	m	struct:__anon1
 sorted_merge	queue.c	/^list_ele_t *sorted_merge(list_ele_t *a, list_ele_t *b)$/;"	f
 strdup	harness.h	68;"	d
 strdup	harness.h	69;"	d
 string_length	qtest.c	/^static int string_length = MAXSTRING;$/;"	v	file:
-strlcpy	queue.c	11;"	d	file:
-strnatcasecmp	strnatcmp.c	/^int strnatcasecmp(nat_char const *a, nat_char const *b)$/;"	f
-strnatcmp0	strnatcmp.c	/^static int strnatcmp0(nat_char const *a, nat_char const *b, int fold_case)$/;"	f	file:
+strlcpy	queue.c	10;"	d	file:
 strsave_or_fail	report.c	/^char *strsave_or_fail(char *s, char *fun_name)$/;"	f
 t	dudect/fixture.c	/^static t_ctx *t;$/;"	v	file:
 t_compute	dudect/ttest.c	/^double t_compute(t_ctx *ctx)$/;"	f
-t_ctx	dudect/ttest.h	/^} t_ctx;$/;"	t	typeref:struct:__anon2
+t_ctx	dudect/ttest.h	/^} t_ctx;$/;"	t	typeref:struct:__anon4
 t_init	dudect/ttest.c	/^void t_init(t_ctx *ctx)$/;"	f
 t_push	dudect/ttest.c	/^void t_push(t_ctx *ctx, double x, uint8_t class)$/;"	f
 t_threshold_bananas	dudect/fixture.c	51;"	d	file:
 t_threshold_moderate	dudect/fixture.c	54;"	d	file:
-tail	queue.h	/^    list_ele_t *tail;$/;"	m	struct:__anon4
+tail	queue.h	/^    list_ele_t *tail;$/;"	m	struct:__anon1
 test_calloc	harness.c	/^void *test_calloc(size_t nelem, size_t elsize)$/;"	f
 test_free	harness.c	/^void test_free(void *p)$/;"	f
-test_insert_tail	dudect/constant.c	/^enum { test_insert_tail, test_size };$/;"	e	enum:__anon1	file:
+test_insert_tail	dudect/constant.c	/^enum { test_insert_tail, test_size };$/;"	e	enum:__anon3	file:
 test_malloc	harness.c	/^void *test_malloc(size_t size)$/;"	f
-test_size	dudect/constant.c	/^enum { test_insert_tail, test_size };$/;"	e	enum:__anon1	file:
+test_size	dudect/constant.c	/^enum { test_insert_tail, test_size };$/;"	e	enum:__anon3	file:
 test_strdup	harness.c	/^char *test_strdup(const char *s)$/;"	f
 test_tries	dudect/fixture.c	43;"	d	file:
+tid	Makefile	/^tid := 0$/;"	m
 time_limit	harness.c	/^static int time_limit = 1;$/;"	v	file:
 time_limited	harness.c	/^static bool time_limited = false;$/;"	v	file:
 traceDict	scripts/driver.py	/^    traceDict = {$/;"	v	class:Tracer
